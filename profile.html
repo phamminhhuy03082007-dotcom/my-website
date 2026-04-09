@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f2f2;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      margin: 10px 0;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #555;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <img src="https://via.placeholder.com/100">
+
+  <h2 id="name"></h2>
+
+  <p>Welcome to your profile 🎉</p>
+
+  <button onclick="logout()">Logout</button>
+  <a href="index.html">🏠 Home</a>
+</div>
+
+<script>
+let currentUser = localStorage.getItem("currentUser");
+
+if (!currentUser) {
+  window.location.href = "login.html";
+}
+
+document.getElementById("name").innerText = currentUser;
+
+function logout() {
+  localStorage.removeItem("currentUser");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearningEnglishWithMe</title>
+  <style>
+    header {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    
+    
+    
+    
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px;
+    }
+
+    .btn {
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #555;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ToontoonOfHuy</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="register.html">Register</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome!</h2>
+    <p>Hello! I'm learning web development.</p>
+    <button class="btn" onclick="gotoFlashcard()">Click To Learn</button>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a beginner learning HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: example@email.com</p>
+  </section>
+
+  <footer>
+    <p>© 2026 My Website</p>
+  </footer>
+
+  <script>
+  function gotoFlashcard() {
+  window.location.href = "learn.html";
+    }
+  </script>
+
+</body>
+</html>

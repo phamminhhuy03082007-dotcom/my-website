@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f2f2f2;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #555;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    a {
+      display: block;
+      margin-top: 15px;
+      color: #555;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>Register</h2>
+
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+
+  <button onclick="register()">Create Account</button>
+
+  <a href="login.html">Back to Login</a>
+  <a href="index.html">🏠 Home</a>
+</div>
+
+<script>
+function register() {
+  let user = document.getElementById("username").value;
+  let pass = document.getElementById("password").value;
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  let exists = users.find(u => u.username === user);
+  if (exists) {
+    alert("Username already exists!");
+    return;
+  }
+
+  users.push({ username: user, password: pass });
+
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Register success!");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
